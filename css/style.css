@@ -1,0 +1,37 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+section {
+    padding-top: 60px;
+    margin-top: -60px;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+h2 {
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.glossary-item {
+    margin-bottom: 20px;
+}
+
+.glossary-item .icon {
+    font-size: 2rem;
+    margin-right: 15px;
+    color: #0d6efd;
+}
+
+.logo {
+    max-height: 50px;
+    margin-right: 20px;
+}

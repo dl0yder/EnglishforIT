@@ -4,57 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English for IT</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>English for IT</h1>
-        <nav>
-            <ul>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#glossary">Glossary</a></li>
-            </ul>
-        </nav>
+    <header class="bg-dark text-white text-center p-3 d-flex align-items-center">
+        <img src="images/IstecLogo.png" alt="Istec Logo" class="logo">
+        <h1 class="flex-grow-1">English for IT</h1>
     </header>
 
-    <main>
-        <section id="blog">
-            <h2>What are computers? How they work? What is the most important part? What are the components?</h2>
-            <p>
-                A computer is an electronic device that manipulates information, or data. It has the ability to store, retrieve, and process data. You may already know that you can use a computer to type documents, send email, play games, and browse the Web. You can also use it to edit or create spreadsheets, presentations, and even videos.
-            </p>
-            <p>
-                A computer is a programmable machine that receives input, stores and manipulates data, and provides output in a useful format.
-            </p>
-            <p>
-                The most important part of a computer is the central processing unit (CPU), or microprocessor. It is the "brain" of the computer. It performs all the calculations and executes all the instructions.
-            </p>
-            <p>
-                The main components of a computer are:
-                <ul>
-                    <li>CPU (Central Processing Unit)</li>
-                    <li>RAM (Random Access Memory)</li>
-                    <li>Hard drive (or solid-state drive)</li>
-                    <li>Motherboard</li>
-                    <li>Power supply</li>
-                    <li>Input devices (keyboard, mouse)</li>
-                    <li>Output devices (monitor, printer)</li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#computers">What are computers?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-they-work">How they work?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#important-part">What is the most important part?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#components">What are the components?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#glossary">Glossary</a>
+                    </li>
                 </ul>
-            </p>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        <section id="computers" class="mb-5">
+            <h2>What are computers?</h2>
+            <p>A computer is an electronic device that manipulates information, or data. It has the ability to store, retrieve, and process data. You may already know that you can use a computer to type documents, send email, play games, and browse the Web. You can also use it to edit or create spreadsheets, presentations, and even videos.</p>
         </section>
 
-        <section id="glossary">
-            <h2>Glossary of IT Terms</h2>
-            <div class="glossary-container">
-                <!-- Glossary terms will be added here -->
+        <section id="how-they-work" class="mb-5">
+            <h2>How they work?</h2>
+            <p>Computers work through a process called the "fetch, decode, execute" cycle. The central processing unit (CPU) fetches instructions from memory, decodes them to understand what to do, and then executes the instructions. This happens millions of times per second, allowing computers to perform complex tasks quickly.</p>
+        </section>
+
+        <section id="important-part" class="mb-5">
+            <h2>What is the most important part?</h2>
+            <p>While every component is important, the Central Processing Unit (CPU) is often considered the "brain" of the computer. It performs most of the processing inside the computer, turning raw data into useful information. Without a CPU, a computer cannot function.</p>
+        </section>
+
+        <section id="components" class="mb-5">
+            <h2>What are the components?</h2>
+            <p>A computer is a complex machine made of many different parts, each with a specific job. Here are the main components:</p>
+            <ul>
+                <li><strong>CPU (Central Processing Unit):</strong> Often called the "brain" of the computer, the CPU is responsible for executing instructions and performing calculations. Its performance is measured in Gigahertz (GHz), and modern CPUs have multiple "cores" to handle several tasks at once.</li>
+                <li><strong>RAM (Random Access Memory):</strong> This is the computer's short-term memory. It temporarily stores data that is being actively used by applications, allowing for fast access. The more RAM a computer has, the more applications it can run smoothly at the same time. This memory is "volatile," meaning its contents are lost when the computer is turned off.</li>
+                <li><strong>Storage (Hard Drive or SSD):</strong> This is the computer's long-term memory, where your files, applications, and the operating system are stored.
+                    <ul>
+                        <li>A <strong>Hard Disk Drive (HDD)</strong> is a traditional storage device that uses spinning magnetic disks to store data.</li>
+                        <li>A <strong>Solid-State Drive (SSD)</strong> is a newer, faster type of drive that uses flash memory. SSDs are more durable and significantly faster than HDDs, resulting in quicker boot times and application loading.</li>
+                    </ul>
+                </li>
+                <li><strong>Motherboard:</strong> The motherboard is the main circuit board that connects all the components. It acts as the "backbone" of the computer, allowing the CPU, RAM, storage, and other parts to communicate with each other.</li>
+                <li><strong>GPU (Graphics Processing Unit):</strong> The GPU is a specialized processor designed to handle visual information and render images, videos, and 3D graphics. While all computers have some form of graphics capability, a dedicated GPU is essential for demanding tasks like gaming, video editing, and graphic design.</li>
+                <li><strong>Power Supply Unit (PSU):</strong> The PSU is responsible for converting the alternating current (AC) from your wall outlet into the direct current (DC) that the computer's components need to operate. It ensures that every part of the computer receives a stable and reliable supply of power.</li>
+            </ul>
+        </section>
+
+        <section id="glossary" class="mb-5">
+            <h2>Glossary</h2>
+            <div id="glossary-container" class="row">
+                <!-- Glossary terms will be injected here by JavaScript -->
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p>Work done by Daniel Costa and Rafael Alves</p>
+        <p>Ciber 1-A</p>
         <p>&copy; 2025 English for IT</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
