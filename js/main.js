@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         filteredTerms.forEach(item => {
             const col = document.createElement('div');
-            col.className = 'col-md-6 col-lg-4';
+            col.className = 'col-md-6 col-lg-4 mb-4'; // Added mb-4 for spacing
             
             const card = document.createElement('div');
-            card.className = 'glossary-item d-flex align-items-center p-3 border rounded';
+            card.className = 'glossary-item d-flex align-items-center p-3 border rounded h-100'; // Added h-100
             
             const icon = document.createElement('i');
             icon.className = `${item.icon} icon`;
@@ -115,25 +115,34 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Active link highlighting
+    // Active link highlighting on scroll
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarHeight = document.querySelector('.navbar').offsetHeight;
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === entry.target.id) {
-                        link.classList.add('active');
-                    }
-                });
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - navbarHeight - 50; // Add a 50px buffer
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
             }
         });
-    }, { threshold: 0.5 });
 
-    sections.forEach(section => {
-        sectionObserver.observe(section);
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Also handle click to set active state immediately
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.forEach(lnk => lnk.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
 
     // Theme Toggle
