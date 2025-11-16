@@ -9,19 +9,23 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="bg-dark text-white text-center p-3 d-flex align-items-center">
-        <img src="images/IstecLogo.png" alt="Istec Logo" class="logo">
-        <h1 class="flex-grow-1">English for IT</h1>
-    </header>
+    <div class="hero-section text-white text-center py-5">
+        <div id="particles-js"></div>
+        <div class="container">
+            <img src="images/IstecLogo.png" alt="Istec Logo" class="logo mb-3">
+            <h1 class="display-3">English for IT</h1>
+            <p class="lead">Develop writing and communication skills in English, applied to the context of information technology.</p>
+        </div>
+    </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Menu</a>
+            <a class="navbar-brand me-auto" href="#"><i class="fas fa-bars"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#computers">What are computers?</a>
                     </li>
@@ -38,51 +42,101 @@
                         <a class="nav-link" href="#glossary">Glossary</a>
                     </li>
                 </ul>
+                <div class="form-check form-switch order-lg-last">
+                    <input class="form-check-input" type="checkbox" id="theme-toggle">
+                    <label class="form-check-label" for="theme-toggle"><i class="fas fa-moon"></i></label>
+                </div>
             </div>
         </div>
     </nav>
 
     <main class="container mt-5">
-        <section id="computers" class="mb-5">
-            <h2>What are computers?</h2>
+        <section id="computers" class="mb-5 fade-in-section">
+            <h2><i class="fas fa-laptop computer-icon"></i> What are computers?</h2>
             <p>A computer is an electronic device that manipulates information, or data. It has the ability to store, retrieve, and process data. You may already know that you can use a computer to type documents, send email, play games, and browse the Web. You can also use it to edit or create spreadsheets, presentations, and even videos.</p>
         </section>
 
-        <section id="how-they-work" class="mb-5">
+        <section id="how-they-work" class="mb-5 fade-in-section">
             <h2>How they work?</h2>
             <p>Computers work through a process called the "fetch, decode, execute" cycle. The central processing unit (CPU) fetches instructions from memory, decodes them to understand what to do, and then executes the instructions. This happens millions of times per second, allowing computers to perform complex tasks quickly.</p>
         </section>
 
-        <section id="important-part" class="mb-5">
+        <section id="important-part" class="mb-5 fade-in-section">
             <h2>What is the most important part?</h2>
             <p>While every component is important, the Central Processing Unit (CPU) is often considered the "brain" of the computer. It performs most of the processing inside the computer, turning raw data into useful information. Without a CPU, a computer cannot function.</p>
         </section>
 
-        <section id="components" class="mb-5">
+        <section id="components" class="mb-5 fade-in-section">
             <h2>What are the components?</h2>
-            <p>A computer is a complex machine made of many different parts, each with a specific job. Here are the main components:</p>
-            <ul>
-                <li><strong>CPU (Central Processing Unit):</strong> Often called the "brain" of the computer, the CPU is responsible for executing instructions and performing calculations. Its performance is measured in Gigahertz (GHz), and modern CPUs have multiple "cores" to handle several tasks at once.</li>
-                <li><strong>RAM (Random Access Memory):</strong> This is the computer's short-term memory. It temporarily stores data that is being actively used by applications, allowing for fast access. The more RAM a computer has, the more applications it can run smoothly at the same time. This memory is "volatile," meaning its contents are lost when the computer is turned off.</li>
-                <li><strong>Storage (Hard Drive or SSD):</strong> This is the computer's long-term memory, where your files, applications, and the operating system are stored.
-                    <ul>
-                        <li>A <strong>Hard Disk Drive (HDD)</strong> is a traditional storage device that uses spinning magnetic disks to store data.</li>
-                        <li>A <strong>Solid-State Drive (SSD)</strong> is a newer, faster type of drive that uses flash memory. SSDs are more durable and significantly faster than HDDs, resulting in quicker boot times and application loading.</li>
-                    </ul>
-                </li>
-                <li><strong>Motherboard:</strong> The motherboard is the main circuit board that connects all the components. It acts as the "backbone" of the computer, allowing the CPU, RAM, storage, and other parts to communicate with each other.</li>
-                <li><strong>GPU (Graphics Processing Unit):</strong> The GPU is a specialized processor designed to handle visual information and render images, videos, and 3D graphics. While all computers have some form of graphics capability, a dedicated GPU is essential for demanding tasks like gaming, video editing, and graphic design.</li>
-                <li><strong>Power Supply Unit (PSU):</strong> The PSU is responsible for converting the alternating current (AC) from your wall outlet into the direct current (DC) that the computer's components need to operate. It ensures that every part of the computer receives a stable and reliable supply of power.</li>
-            </ul>
+            <p class="text-center mb-4">A computer is a complex machine made of many different parts, each with a specific job. Here are the main components:</p>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100 component-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-microchip fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">CPU (Central Processing Unit)</h5>
+                            <p class="card-text">Often called the "brain" of the computer, the CPU is responsible for executing instructions and performing calculations. Its performance is measured in Gigahertz (GHz), and modern CPUs have multiple "cores" to handle several tasks at once.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 component-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-memory fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">RAM (Random Access Memory)</h5>
+                            <p class="card-text">This is the computer's short-term memory. It temporarily stores data that is being actively used by applications, allowing for fast access. The more RAM a computer has, the more applications it can run smoothly at the same time. This memory is "volatile," meaning its contents are lost when the computer is turned off.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 component-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-hdd fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Storage (Hard Drive or SSD)</h5>
+                            <p class="card-text">This is the computer's long-term memory, where your files, applications, and the operating system are stored. HDDs use spinning magnetic disks, while SSDs use flash memory, offering greater speed and durability.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 component-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-motherboard fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Motherboard</h5>
+                            <p class="card-text">The motherboard is the main circuit board that connects all the components. It acts as the "backbone" of the computer, allowing the CPU, RAM, storage, and other parts to communicate with each other.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 component-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-gamepad fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">GPU (Graphics Processing Unit)</h5>
+                            <p class="card-text">The GPU is a specialized processor designed to handle visual information and render images, videos, and 3D graphics. It's essential for demanding tasks like gaming, video editing, and graphic design.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 component-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-power-off fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Power Supply Unit (PSU)</h5>
+                            <p class="card-text">The PSU is responsible for converting the alternating current (AC) from your wall outlet into the direct current (DC) that the computer's components need to operate. It ensures a stable and reliable power supply.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="glossary" class="mb-5">
+        <section id="glossary" class="mb-5 fade-in-section">
             <h2>Glossary</h2>
+            <input type="text" id="glossary-search" class="form-control mb-4" placeholder="Search for a term...">
             <div id="glossary-container" class="row">
                 <!-- Glossary terms will be injected here by JavaScript -->
             </div>
         </section>
     </main>
+
+    <a href="#" id="back-to-top" class="btn btn-primary back-to-top-btn"><i class="fas fa-arrow-up"></i></a>
 
     <footer class="bg-dark text-white text-center p-3 mt-5">
         <p>Work done by Daniel Costa and Rafael Alves</p>
@@ -91,6 +145,114 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>

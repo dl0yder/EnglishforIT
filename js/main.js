@@ -26,9 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
         { term: 'Ethernet', definition: 'The standard technology for connecting devices in a wired Local Area Network (LAN), using a physical cable (like a Cat 6 cable) for a stable, high-speed connection.', icon: 'fas fa-ethernet' }
     ];
 
-    function displayGlossary() {
+    function displayGlossary(filter = '') {
         glossaryContainer.innerHTML = '';
-        glossaryTerms.forEach(item => {
+        const filteredTerms = glossaryTerms.filter(item => 
+            item.term.toLowerCase().includes(filter.toLowerCase()) || 
+            item.definition.toLowerCase().includes(filter.toLowerCase())
+        );
+
+        filteredTerms.forEach(item => {
             const col = document.createElement('div');
             col.className = 'col-md-6 col-lg-4';
             
@@ -56,4 +61,100 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     displayGlossary();
+
+    const glossarySearch = document.getElementById('glossary-search');
+    glossarySearch.addEventListener('input', (e) => {
+        displayGlossary(e.target.value);
+    });
+
+    // Intersection Observer for fade-in sections
+    const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+    const observerOptions = {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0.1 // 10% of the section must be visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Stop observing once it's visible
+            }
+        });
+    }, observerOptions);
+
+    fadeInSections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    };
+
+    backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Active link highlighting
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === entry.target.id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const themeIcon = document.querySelector('label[for="theme-toggle"] i');
+
+    function setTheme(isDark) {
+        body.classList.toggle('dark-mode', isDark);
+        themeToggle.checked = isDark;
+        themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    themeToggle.addEventListener('change', (e) => {
+        setTheme(e.target.checked);
+    });
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        setTheme(savedTheme === 'dark');
+    }
 });
